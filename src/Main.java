@@ -1,28 +1,24 @@
 public class Main {
     public static void main(String[] args) {
         String word = "abc";
-        binarySearch();
+        Main main = new Main();
+        main.insertionSort();
     }
 
-    public static void binarySearch() {
-        String[] array = {"we", "the", "people", "of", "India"};
-        stringBinary(array, "people");
-    }
-
-    public static void stringBinary(String[] array, String search) {
-        int mid;
-        int min = 0, max = array.length - 1;
-        while (min <= max) {
-            mid = (min + max) / 2;
-            if (array[mid].compareTo(search) < 0) {
-                min = mid + 1;
-            } else if (array[mid].compareTo(search) > 0) {
-                max = mid - 1;
-            } else if (array[mid].compareTo(search) == 0) {
-                System.out.println("Key found");
-                return;
+    public void insertionSort() {
+        String[] array = {"my", "name", "is", "Debabrata"};
+        String max = "null";
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i].compareToIgnoreCase(array[j]) > 0) {
+                    max = array[i];
+                    array[i] = array[j];
+                    array[j] = max;
+                }
             }
         }
-        System.out.println("Key not found ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
     }
 }
