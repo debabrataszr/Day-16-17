@@ -5,7 +5,7 @@ public class Main {
     }
 
     public static void binarySearch() {
-        String[] array = {"we", "the", "people", "of", "India"};
+        String[] array = {"India", "is", "my", "country"};
         stringBinary(array, "people");
     }
 
